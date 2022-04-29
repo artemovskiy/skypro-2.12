@@ -3,12 +3,12 @@ package pro.sky.calculatorsimple;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculatorService {
-    public static String welcome() {
+public class CalculatorService implements CalculatorServiceInterface{
+    public String welcome() {
         return "<b>Добро пожаловать в калькулятор!</b>";
     }
 
-    private static int[] checkInt(String n1, String n2) { // Проверяем на корректность ввода чисел
+    private int[] checkInt(String n1, String n2) { // Проверяем на корректность ввода чисел
         int[] i = new int[2];
         i[0] = -1;
         i[1] = -1;
@@ -23,7 +23,7 @@ public class CalculatorService {
         return i;
     }               // ================================================================
 
-    public static String sum(String n1, String n2) { // ------ метод сложения
+    public String sum(String n1, String n2) { // ------ метод сложения
         int[] i = new int[2];
         i = checkInt(n1, n2);
         if (i[0] == -1 || i[1] == -1) {
@@ -33,7 +33,7 @@ public class CalculatorService {
         return n1 + "+" + n2 + "=" + sum;
     }
 
-    public static String subtraction(String n1, String n2) { // ------ метод вычитания
+    public String subtraction(String n1, String n2) { // ------ метод вычитания
         int[] i = new int[2];
         i = checkInt(n1, n2);
         if (i[0] == -1 || i[1] == -1) {
@@ -43,7 +43,7 @@ public class CalculatorService {
         return n1 + "-" + n2 + "=" + sub;
     }
 
-    public static String multiply(String n1, String n2) { // ------ метод умножения
+    public String multiply(String n1, String n2) { // ------ метод умножения
         int[] i = new int[2];
         i = checkInt(n1, n2);
         if (i[0] == -1 || i[1] == -1) {
@@ -53,7 +53,7 @@ public class CalculatorService {
         return n1 + "*" + n2 + "=" + multi;
     }
 
-    public static String divide(String n1, String n2) { // ------ метод деления
+    public String divide(String n1, String n2) { // ------ метод деления
         int[] i = new int[2];
         i = checkInt(n1, n2);
         if (i[0] == -1 || i[1] == -1) {
