@@ -1,16 +1,17 @@
-package pro.sky.calculatorsimple;
+package pro.sky.calculatorsimple.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import pro.sky.calculatorsimple.CalculatorService;
 
 @RestController
 @RequestMapping(path = "/calculator")
 public class CalculatorController {
-    private final CalculatorServiceInterface calculatorService;
+    private final CalculatorService calculatorService;
 
-    public CalculatorController(CalculatorServiceInterface calculatorService) {
+    public CalculatorController(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
     }
 
@@ -21,7 +22,7 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public String sum(@RequestParam("num1") String n1, @RequestParam ("num2") String n2) {
+    public String sum(@RequestParam(value = "num1", required = false) String n1, @RequestParam (value = "num2", required = false) String n2) {
         return calculatorService.sum(n1,n2);
     }
 
