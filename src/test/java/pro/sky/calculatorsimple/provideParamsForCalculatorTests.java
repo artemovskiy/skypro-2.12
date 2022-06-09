@@ -44,33 +44,33 @@ public class provideParamsForCalculatorTests {
 
     @ParameterizedTest
     @MethodSource("paramsOfSum")
-    public void shouldReturnResultOfSum(String num1, String num2, String correct) {
-        String result = out.sum(num1, num2);
-        Assertions.assertTrue(result.contains(correct));
+    public void shouldReturnResultOfSum(int num1, int num2, int correct) {
+        int result = out.sum(num1, num2);
+      //  Assertions.assertTrue(result.contains(correct));
         Assertions.assertEquals(correct, result);
     }
 
     @ParameterizedTest
     @MethodSource("paramsOfSub")
-    public void shouldReturnResultOfSub(String num1, String num2, String correct) {
-        String result = out.subtraction(num1, num2);
-        Assertions.assertTrue(result.contains(correct));
+    public void shouldReturnResultOfSub(int num1, int num2, int correct) {
+        int result = out.subtraction(num1, num2);
+       // Assertions.assertTrue(result.contains(correct));
         Assertions.assertEquals(correct, result);
     }
 
     @ParameterizedTest
     @MethodSource("paramsOfMultiply")
-    public void shouldReturnResultOfMultiply(String num1, String num2, String correct) {
-        String result = out.multiply(num1, num2);
-        Assertions.assertTrue(result.contains(correct));
+    public void shouldReturnResultOfMultiply(int num1, int num2, int correct) {
+        int result = out.multiply(num1, num2);
+      //  Assertions.assertTrue(result.contains(correct));
         Assertions.assertEquals(correct, result);
     }
 
     @ParameterizedTest
     @MethodSource("paramsOfDivide")
-    public void shouldReturnResultOfDivide(String num1, String num2, String correct) {
-        String result = out.divide(num1, num2);
-        Assertions.assertTrue(result.contains(correct));
+    public void shouldReturnResultOfDivide(int num1, int num2, float correct) {
+        float result = out.divide(num1, num2);
+     //   Assertions.assertTrue(result.contains(correct));
         Assertions.assertEquals(correct, result);
     }
 }
