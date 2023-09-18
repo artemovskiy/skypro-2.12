@@ -23,14 +23,8 @@ public class CalculatorService implements CalculatorServiceInterface{
         return i;
     }               // ================================================================
 
-    public String sum(String n1, String n2) { // ------ метод сложения
-        int[] i = new int[2];
-        i = checkInt(n1, n2);
-        if (i[0] == -1 || i[1] == -1) {
-            return "Ошибка. Один или оба параметра отсутствует либо не являются числом";
-        }
-        int sum = i[0] + i[1];
-        return n1 + "+" + n2 + "=" + sum;
+    public int sum(int n1, int n2) {
+        return n1 + n2;
     }
 
     public String subtraction(String n1, String n2) { // ------ метод вычитания
@@ -53,16 +47,10 @@ public class CalculatorService implements CalculatorServiceInterface{
         return n1 + "*" + n2 + "=" + multi;
     }
 
-    public String divide(String n1, String n2) { // ------ метод деления
-        int[] i = new int[2];
-        i = checkInt(n1, n2);
-        if (i[0] == -1 || i[1] == -1) {
-            return "Ошибка. Один или оба параметра отсутствует либо не являются числом";
+    public float divide(int n1, int n2) {
+        if(n2 == 0) {
+            throw new IllegalArgumentException("division by ZERO");
         }
-        if (i[1] == 0) {
-            return "Деление на ноль НЕВОЗМОЖНО!";
-        }
-        float div = (float)i[0] / i[1];
-        return n1 + "/" + n2 + "=" + div;
+        return (float)n1 / n2;
     }
 }

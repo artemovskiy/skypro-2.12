@@ -21,8 +21,8 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public String sum(@RequestParam("num1") String n1, @RequestParam ("num2") String n2) {
-        return calculatorService.sum(n1,n2);
+    public String sum(@RequestParam("num1") int n1, @RequestParam ("num2") int n2) {
+        return n1 + "+" + n2 + "=" + calculatorService.sum(n1,n2);
     }
 
     @GetMapping(path = "/minus")
@@ -36,7 +36,7 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/divide")
-    public String divide(@RequestParam("num1") String n1, @RequestParam ("num2") String n2) {
-        return calculatorService.divide(n1,n2);
+    public String divide(@RequestParam("num1") int n1, @RequestParam ("num2") int n2) {
+        return n1 + "/" + n2 + "=" + calculatorService.divide(n1,n2);
     }
 }
